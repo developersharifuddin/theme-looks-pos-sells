@@ -20,7 +20,7 @@ use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, HasProfilePhoto, HasTeams, Notifiable, TwoFactorAuthenticatable, HasRoles;
+    use HasApiTokens, HasFactory, HasProfilePhoto, HasTeams, Notifiable, TwoFactorAuthenticatable;
 
     public function tokens()
     {
@@ -72,10 +72,6 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
 
-    // public function admin()
-    // {
-    //     return $this->role === 'admin';
-    // }
 
     public function user()
     {
@@ -85,11 +81,6 @@ class User extends Authenticatable implements MustVerifyEmail
     public function sales()
     {
         return $this->hasMany(Sell::class);
-    }
-
-    public function employees()
-    {
-        return $this->hasMany(Employee::class);
     }
 
 
@@ -123,14 +114,6 @@ class User extends Authenticatable implements MustVerifyEmail
         return $hasPermission;
     }
 
-
-
-
-    // Define the relationship between users and permissions
-    public function permissions()
-    {
-        return $this->belongsToMany(SpatiePermission::class);
-    }
 
 
     // Check if the user has the given permission

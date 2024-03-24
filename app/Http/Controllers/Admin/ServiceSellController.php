@@ -69,7 +69,7 @@ class ServiceSellController extends Controller
 
             $query = ItemInfo::where('status', 1)
                 ->where('approved_status', 1)
-                ->latest();
+                ->latest('id');
 
             $users = User::all();
 

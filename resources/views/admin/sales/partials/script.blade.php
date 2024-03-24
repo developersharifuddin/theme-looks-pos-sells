@@ -328,8 +328,7 @@
     }
 
 </script>
-// জক্সিং
-// composer require ibra/motion-barcode-scanner laravel
+
 <script src="https://cdn.rawgit.com/zxing-js/library/gh-pages/0.17.1/dist/zxing.min.js"></script>;
 <script>
     function startBarcodeScanner() {
