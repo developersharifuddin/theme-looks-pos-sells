@@ -24,7 +24,6 @@ class ServiceSellController extends Controller
         try {
             $perPage = $request->input('per_page', 10);
             $search = $request->input('search');
-
             $filters = $request->only(['search', 'per_page']);
 
             $users = User::latest();
@@ -37,8 +36,7 @@ class ServiceSellController extends Controller
             // Apply search filter
             if ($search) {
                 $query->where(function ($query) use ($search) {
-                    // Dynamically search across all columns
-                    $fillableColumns = (new Sell())->getFillable(); // Fetch all fillable columns
+                    $fillableColumns = (new Sell())->getFillable();
                     foreach ($fillableColumns as $column) {
                         $query->orWhere($column, 'like', '%' . $search . '%');
                     }
@@ -48,7 +46,6 @@ class ServiceSellController extends Controller
             $data = $query->paginate($perPage);
 
             return view('admin.sales.index', [
-                // 'customers' => $customers,
                 'users' => $users, 'sells' => $data,
             ]);
         } catch (\Exception $e) {
@@ -155,7 +152,6 @@ class ServiceSellController extends Controller
      */
     public function store(StoreServiceSellRequest $request)
     {
-        \Log::info($request->all());
         set_time_limit(120); // Set the limit to 120 seconds 
 
         // var_dump($request->all());
@@ -176,11 +172,7 @@ class ServiceSellController extends Controller
 
             $sell = Sell::create([
                 'sells_type' => "pos-sell",
-                'customer_id' => '0',
-                'shipping_address' => '0',
-                'phone' => '0',
                 'sells_status' =>  1,
-                'ref_no' => "",
                 'payment_type' => 'Cash',
                 'grand_total' => $grand_total,
                 'discount' => $discount,
@@ -188,7 +180,6 @@ class ServiceSellController extends Controller
                 'service_charge' => $tax_amount,
                 'payable' => $attribute['total_payable_amount'],
                 'payment_status' => 1,
-                'sent_sms' => request()->input('sent_sms', '0'),
                 'created_by' => Auth::user()->id,
             ]);
 

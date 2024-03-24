@@ -25,11 +25,9 @@ class StoreServiceSellRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'customer_id' => 'nullable|integer',
             'sell_date' => 'required',
             'sell_status' => 'nullable',
             'service_charge' => 'nullable',
-            'reference_no' => 'nullable',
             'bar_code' => 'nullable',
             'product_id' => 'required|exists:item_infos,id',
             'product_name' => 'required|string|exists:item_infos,name',
@@ -37,8 +35,6 @@ class StoreServiceSellRequest extends FormRequest
             'product_discount' => 'nullable|exists:item_infos,discount',
             'product_tax' => 'nullable|numeric|exists:item_infos,tax',
             'product_total_amount' => 'required|numeric',
-            'others_charge' => 'nullable|string',
-            'others_charge_amount' => 'nullable|string',
             'discount_type' => 'nullable',
             'discount' => 'nullable|string',
             'extra_discount' => 'nullable',

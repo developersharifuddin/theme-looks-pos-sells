@@ -40,7 +40,9 @@
    php artisan db:seed
    ```
 
-Then a admin and some roduct seeding into users and items tables.
+   #Note: View directory = resource/theme_looks/
+
+Then a admin and some product seeding into users and items tables.
 
 Usage
 To access the application, navigate to http://localhost:8000 in your browser.
@@ -105,7 +107,7 @@ http://127.0.0.1:8000/admin/sales
 ![alt text](image-9.png)
 http://127.0.0.1:8000/admin/sales/6
 
-![alt text](image-10.png)
+![alt text](image-11.png)
 
 Thank you for your time considerations.
 License

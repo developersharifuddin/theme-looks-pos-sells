@@ -14,14 +14,12 @@ class Sell extends Model
 {
     use HasFactory;
     use Filterable;
-    protected $guarded = [];
+    protected $guarded = [''];
 
     protected $fillable = [
-        'id', 'customer_id', 'shipping_address', 'phone', 'sells_status',
-        'ref_no', 'created_by', 'payment_type', 'payment_status', 'payable', 'sale_code', 'payment_details', 'service_charge',
-        'discount',
-        'grand_total',
-        'sells_type'
+        'id', 'sells_status', 'created_by', 'payment_type', 'payment_status',
+        'payable', 'sale_code', 'payment_details', 'service_charge',
+        'discount', 'grand_total', 'sells_type'
     ];
 
     public function sellsItems()
