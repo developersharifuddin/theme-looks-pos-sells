@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
-use App\Http\Requests\StoreServiceSellRequest;
+use App\Http\Requests\StoreSellRequest;
 
-class ServiceSellController extends Controller
+class SellController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -150,7 +150,7 @@ class ServiceSellController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreServiceSellRequest $request)
+    public function store(StoreSellRequest $request)
     {
         set_time_limit(120); // Set the limit to 120 seconds 
 

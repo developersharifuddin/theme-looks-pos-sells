@@ -52,7 +52,6 @@
                             <th>Sales Date</th>
                             <th>Total Amount</th>
                             <th>Discount</th>
-                            <th>TAX</th>
                             <th>Paid Payment</th>
                             <th>Sales by</th>
                             <th>Sales Status</th>
@@ -71,7 +70,6 @@
                             <td>{{ \Carbon\Carbon::parse($sale->created_at)->format('d-m-Y h:i A') }}</td>
                             <td>{{ number_format($sale->payable, 2) }}</td>
                             <td>{{ number_format($sale->discount, 2) }}</td>
-                            <td>{{ number_format($sale->service_charge, 2) }}</td>
 
                             <td>
                                 @php

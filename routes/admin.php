@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminsController;
+use App\Http\Controllers\Admin\SellController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ItemInfoController;
-use App\Http\Controllers\Admin\ServiceSellController;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
 
@@ -20,9 +20,9 @@ Route::middleware([
     Route::resource('/products', ItemInfoController::class);
     Route::get('/products/set-price/{id}', [ItemInfoController::class, 'findSetPrice'])->name('setPrice');
     Route::post('/products/set-price-declear', [ItemInfoController::class, 'setPrice'])->name('setPriceDeclear');
-    Route::post('/newsales/getItemByBarcodeService', [ServiceSellController::class, 'getItem'])->name('newsaleitemService');
+    Route::post('/newsales/getItemByBarcodeService', [SellController::class, 'getItem'])->name('newsaleitemService');
 
-    Route::resource('/sales', ServiceSellController::class);
+    Route::resource('/sales', SellController::class);
 
     Route::get('/loadProduct', [ItemInfoController::class, 'loadProduct'])->name('loadProduct');
 

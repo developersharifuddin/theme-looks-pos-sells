@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreServiceSellRequest extends FormRequest
+class StoreSellRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
