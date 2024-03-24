@@ -14,31 +14,31 @@
    cd theme-looks-pos-sells
    ```
 
-Install dependencies:
+2. Install dependencies:
 
-```
-composer install
-```
+   ```
+   composer install
+   ```
 
-Copy the .env.example file to .env and configure your environment variables, including the database connection.
+   Copy the .env.example file to .env and configure your environment variables, including the database connection.
 
-Generate application key:
+3. Generate application key:
 
-```
-php artisan key:generate
-```
+   ```
+   php artisan key:generate
+   ```
 
-Migrate the database:
+4. Migrate the database:
 
-```
-php artisan migrate
-```
+   ```
+   php artisan migrate
+   ```
 
-Seed the database:
+5. Seed the database:
 
-```
-php artisan db:seed
-```
+   ```
+   php artisan db:seed
+   ```
 
 Then a admin and some roduct seeding into users and items tables.
 
@@ -68,13 +68,19 @@ http://127.0.0.1:8000/admin/products
 
 # Create a new product
 
+http://127.0.0.1:8000/admin/products/create
+
 ![alt text](image-3.png)
 
 # Edit product
 
+http://127.0.0.1:8000/admin/products/20/edit
+
 ![alt text](image-4.png)
 
 # View product
+
+http://127.0.0.1:8000/admin/products/20
 
 ![alt text](image-5.png)
 
